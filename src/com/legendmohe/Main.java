@@ -104,7 +104,7 @@ public class Main {
     }
 
     private void fillFilesRecursively(File file, List<File> resultFiles) {
-        if (file.isFile()) {
+        if (file.isFile() && file.getAbsolutePath().endsWith(".java")) {
             resultFiles.add(file);
         } else {
             for (File child : file.listFiles()) {
